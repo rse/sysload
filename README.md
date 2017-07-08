@@ -44,7 +44,19 @@ setInterval(() => {
 Application Programming Interface
 ---------------------------------
 
-FIXME
+```ts
+declare module "sysload" {
+    class SysLoad {
+        public constructor(config?: { [ name: string ]: number })
+        public measure(duration?: number): Promise<number>
+        public start(): void
+        public average(): { [ name: string ]: number }
+        public stop(): void
+    }
+    const sysload: SysLoad
+    export = sysload
+}
+```
 
 License
 -------
