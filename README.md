@@ -27,7 +27,7 @@ Usage
 -----
 
 ```js
-import SysLoad from "sysload"
+const SysLoad = require("sysload")
 
 const sysload = new SysLoad()
 
