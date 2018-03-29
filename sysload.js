@@ -150,7 +150,7 @@ module.exports = class SysLoad {
         this.timer = setTimeout(handler, 0)
     }
 
-    /*  stop continous measurement  */
+    /*  stop continuous measurement  */
     stop () {
         /*  sanity check usage context  */
         if (!this.measuring)
