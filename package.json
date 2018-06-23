@@ -2,7 +2,7 @@
     "name":        "sysload",
     "homepage":    "http://github.com/rse/sysload",
     "description": "System Load Determination",
-    "version":     "0.9.6",
+    "version":     "0.9.7",
     "license":     "MIT",
     "author": {
         "name":    "Ralf S. Engelschall",
