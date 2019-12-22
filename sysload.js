@@ -67,9 +67,9 @@ module.exports = class SysLoad {
             const cpuTimes = () => {
                 let idle  = 0
                 let total = 0
-                let cpus = os.cpus()
+                const cpus = os.cpus()
                 for (let i = 0; i < cpus.length; i++) {
-                    for (let type in cpus[i].times)
+                    for (const type in cpus[i].times)
                         total += cpus[i].times[type]
                     idle += cpus[i].times.idle
                 }
@@ -80,13 +80,13 @@ module.exports = class SysLoad {
             }
 
             /*  determine CPU times at start  */
-            let start = cpuTimes()
+            const start = cpuTimes()
             setTimeout(() => {
                 /*  determine CPU times at end  */
-                let end = cpuTimes()
+                const end = cpuTimes()
 
                 /*  calculate the difference  */
-                let diff = { total: 0, idle: 0 }
+                const diff = { total: 0, idle: 0 }
                 if (end.total > start.total) {
                     /*  regular case  */
                     diff.total = end.total - start.total
@@ -119,7 +119,7 @@ module.exports = class SysLoad {
         this.measuring = true
 
         /*  the measurement intervals  */
-        let measurementDuration = 1000
+        const measurementDuration = 1000
 
         /*  initialize load values and provide function for accounting subsequent values  */
         this.loads = {}
@@ -138,7 +138,7 @@ module.exports = class SysLoad {
                 return
 
             /*  perform a single measurement over the measurement duration  */
-            let load = await this.measure(measurementDuration)
+            const load = await this.measure(measurementDuration)
 
             /*  account the measured load for different average slots  */
             Object.keys(this.config).forEach((slot) => {
@@ -177,7 +177,7 @@ module.exports = class SysLoad {
         }
 
         /*  provide the averaged load values  */
-        let result = {}
+        const result = {}
         Object.keys(this.config).forEach((slot) => {
             result[slot] = calcAverage(slot)
         })
