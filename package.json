@@ -20,6 +20,7 @@
         "url":     "http://github.com/rse/sysload/issues"
     },
     "main":        "./sysload.js",
+    "types":       "./sysload.d.ts",
     "devDependencies": {
         "eslint":                         "7.17.0",
         "eslint-config-standard":         "16.0.2",
